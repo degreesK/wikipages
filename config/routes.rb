@@ -5,9 +5,11 @@ Rails.application.routes.draw do
   match('contacts/:id', {:via => [:patch, :put], :to => 'contacts#update'})
   match('contacts/:id', {:via => :delete, :to => 'contacts#destroy'})
   match('contacts/:id/edit', {:via => :get, :to => 'contacts#edit'})
+  match('contacts/:contact_id/phones/new', {:via => :get, :to => 'phones#new'})
+  match('contacts/:contact_id/emails/new', {:via => :get, :to => 'emails#new'})
+  match('contacts/:contact_id/emails', {:via => :post, :to => 'emails#create'})
   match('/', {:via => :get, :to => 'contacts#index'})
 end
-
 
 
 

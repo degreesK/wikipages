@@ -18,3 +18,5 @@
   <input id="contact_email" name="contact[email]" type="text" value"<%= @contact.email %>">
   <button>Update contact</button>
 </form>
+
+match('contacts/:contact_id/phones', {:via => :post, :to => 'phones#create'})
