@@ -1,4 +1,5 @@
 class ContactsController < ApplicationController
+
   def index
     @contacts = Contact.all
     @contact = Contact.new
@@ -8,26 +9,26 @@ class ContactsController < ApplicationController
   def show
     @contact = Contact.find(params[:id])
     render('contacts/show.html.erb')
-end
+  end
 
   def new
     @contact = Contact.new
     render('contacts/new.html.erb')
-end
+  end
 
   def create
     @contact = Contact.new(params[:contact])
     if @contact.save
-    render('contacts/success.html.erb')
-  else
-    render('contacts/new.html.erb')
+      render('contacts/success.html.erb')
+    else
+      render('contacts/new.html.erb')
+    end
   end
-end
 
   def edit
     @contact = Contact.find(params[:id])
     render('contacts/edit.html.erb')
-end
+  end
 
   def update
     @contact = Contact.find(params[:id])

@@ -1,5 +1,6 @@
 <h1><%= @contact.name %></h1>
 
+<a href="/contacts/<%= @contact.id %>/phones/new">Add phone</a>
 <p> Phone: <%= @contact.phone %></p>
 <p> Email: <%= @contact.email %></p>
 
@@ -9,3 +10,5 @@
   data-method="delete"
   rel="nofollow">Delete</a></p>
 <p><a href="/contacts">Return to contact listing</a></p>
+
+match('contacts/:contact_id/phones/new', {:via => :get, :to => 'phones#new'})
