@@ -10,6 +10,7 @@
 <% end %>
 
 <form action="/contacts/<%= @email.contact.id %>/emails" method="post">
-  <input id="email" name="address" type="text" value="<%= @email.address %>">
+  <input id="email" name="address" type="email" value="<%= @email.address %>">
+  <input type="color" name="col">
   <button>Add email</button>
 </form>

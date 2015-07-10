@@ -1,6 +1,9 @@
 <h1><%= @contact.name %></h1>
 
-<a href="/contacts/<%= @contact.id %>/phones/new">Add phone</a>
+<a href="/contacts/<%= @contact.id %>/phones/new">Add phone</a><br>
+<% @contact.emails.each do |email| %>
+    <%= email.address %><br>
+<% end %>
 <a href="/contacts/<%= @contact.id %>/emails/new">Add email</a>
 
 <p><a href="/contacts/<%= @contact.id %>/edit">Edit</a></p>

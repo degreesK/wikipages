@@ -10,7 +10,8 @@ class EmailsController < ApplicationController
         :address => params[:address],
         :contact_id => params[:contact_id])
     if @email.save
-      render('emails/success.html.erb')
+      # render('emails/success.html.erb')
+      redirect_to "/contacts/#{params[:contact_id]}"
     else
       render('emails/new.html.erb')
     end
